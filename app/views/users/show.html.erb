@@ -1,0 +1,25 @@
+<h1>Hello <%= @user.first_name%></h1>
+
+<h3>My account info:</h3>
+	<p>
+		<%= @user.first_name %>
+		<%= @user.last_name %>
+		<%= @user.email %>
+	</p>
+	<p> 
+	<%= link_to 'Edit profile', edit_user_path %> | <%= link_to 'Delete my ish', user_path(@user), method: :delete, data: {confirm: "Are you sure you want to delete your account? How will you ever make a reservation again!!?!?!?!"} %>
+	</p>
+
+
+<h3>My reservations:</h3>
+	<p> 
+		<%= link_to 'Edit reservation' %> | <%= link_to 'Delete reservation', method: :delete, data: {confirm: "Are you sure you want to delete your reservation? Think about all that delicious food you'll be missing out on!!"} %>
+	</p>
+
+
+
+
+<h3>My restaurants:</h3>
+<p> 
+		<%= link_to 'Edit restaurant' %> | <%= link_to 'Delete restaurant', method: :delete, data: {confirm: "Are you sure you want to delete your reservation? Think about all that delicious food you'll be missing out on!!"} %>
+	</p>
