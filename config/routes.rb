@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
  
+  get 'reservations/new'
+
+  get 'reservations/show'
+
+  get 'reservations/edit'
+
  resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
