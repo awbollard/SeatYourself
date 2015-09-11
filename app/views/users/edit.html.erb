@@ -1,3 +1,5 @@
 <h1>Hi there, <%= @user.first_name %>, go ahead and edit your info!</h1>
 
+<p><%= link_to 'Back', user_path(@user) %><br /></p>
+
 <%= render 'form' %>
