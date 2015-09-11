@@ -1,0 +1,19 @@
+<%= form_for @reservation do |f| %>
+
+<div class="date">
+	<%= f.label :dinner_time %>
+	<%= f.datetime_select :dinner_time, {discard_year: true, min_hour: Time.now + 1.hour, minute_step: 30} %>
+</div>
+
+<div class="field">
+	<%= f.label :partysize, "Party Size" %>
+	<%= f.select :partysize, (1..6).to_a %>
+</div>
+
+<div class="submit">
+	<%= f.submit %>
+</div>
+
+<% end %>
+
+<!-- , max_hour: @restaurant.closing_time - 1.hour}  -->
