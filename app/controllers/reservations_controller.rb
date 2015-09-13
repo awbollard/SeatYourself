@@ -41,4 +41,5 @@ class ReservationsController < ApplicationController
 
   def reservation_params
   	params.require(:reservation).permit(:dinner_time, :partysize)
+  end
 end
