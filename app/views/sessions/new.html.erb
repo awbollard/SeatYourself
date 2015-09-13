@@ -1,0 +1,16 @@
+<h1>Login</h1>
+
+	<%= form_tag  |f| %>
+
+	< div class= "field" >
+	<%= f.label "Email" %>
+	<%= f.text_field :email %>
+	</div>
+
+	< div class="field" >
+	<%= f.label "Password" %>
+	<%= f.password_digest :password %>
+	</div>
+
+	<%= f.submit %>
+<% end %>
