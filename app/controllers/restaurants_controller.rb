@@ -4,11 +4,11 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-  	@restaurant = Restaurant.find_by(:id, params[:id])
+  	@restaurant = Restaurant.find_by(id: params[:id])
   end
 
   def edit
-  	@restaurant = Restaurant.find_by(:id, params[:id])
+  	@restaurant = Restaurant.find_by(id: params[:id])
   end
 
   def create
@@ -21,10 +21,20 @@ class RestaurantsController < ApplicationController
   	end
   end
 
-  def destroy
+  def update
+    @restaurant = Restaurant.find_by(id: params[:id])
+
+    if @restaurant.update_attributes(restaurant_params)
+      redirect_to restaurant_path(@restaurant)
+    else
+      render :edit
+    end
   end
 
-  def update
+  def destroy
+    @restaurant = Restaurant.find_by(id: params[:id])
+    @restaurant.destroy
+    redirect_to root_path
   end
 
   private

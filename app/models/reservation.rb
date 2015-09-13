@@ -14,7 +14,7 @@ class Reservation < ActiveRecord::Base
 
 	def max_party_size
 		unless partysize <= 6 && partysize >= 1
-			errors.add(:partysize, "We cann't accomodate that party size, if you need to make a reservation for more than 6 people, please call us.")
+			errors.add(:partysize, "We can't accomodate that party size, if you need to make a reservation for more than 6 people, please call us.")
 		end
 	end
 end
