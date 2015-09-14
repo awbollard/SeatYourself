@@ -1,4 +1,6 @@
 class ReservationsController < ApplicationController
+  before_filter :load_restaurant
+
   def new
   	@reservation = Reservation.new
   end
@@ -8,7 +10,8 @@ class ReservationsController < ApplicationController
   end
 
   def create
-  	@reservation = Reservation.create(reservation_params)
+  	@reservation = @restaurant.reservations.build(reservation_params)
+    @reservation.user = current_user
 
   	if @reservation.save
   		redirect_to reservations_path
@@ -41,5 +44,9 @@ class ReservationsController < ApplicationController
 
   def reservation_params
   	params.require(:reservation).permit(:dinner_time, :partysize)
+  end
+
+   def load_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 end

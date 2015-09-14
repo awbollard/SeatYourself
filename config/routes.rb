@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+  
+  resources :reservations
+=======
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'
+>>>>>>> 33698aab62ed946a438fa69d8cad280777cdea92
 
  resources :reservations
  resources :users

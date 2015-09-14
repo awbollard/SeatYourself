@@ -1,7 +1,7 @@
 class Reservation < ActiveRecord::Base
 
 	validate :open_hours, on: :dinner_time
-	validate 
+	validate :max_party_size, on: :partysize
 
 	belongs_to :user
 	belongs_to :restaurant

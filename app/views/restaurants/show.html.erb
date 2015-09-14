@@ -1,9 +1,29 @@
 <h1><%= @restaurant.name %> Information:</h1>
 <p>
-	Address: <%= @restaurant.address %>
-	Opening Time: <%= @restaurant.opening_time %>
-	Closing Time: <%= @restaurant.closing_time %>
-	City: <%= @restaurant.city %>
-	Price: <%= @restaurant.price %>
-	Description: <%= @restaurant.description %>
+	Address: <%= @restaurant.address %><br />
+	Opening Time: <%= @restaurant.opening_time %><br />
+	Closing Time: <%= @restaurant.closing_time %><br />
+	City: <%= @restaurant.city %><br />
+	Price: <%= @restaurant.price %><br />
+	Description: <%= @restaurant.description %><br />
 </p>
+
+<h2>Make a reservation:</h2>
+
+<%= form_for([@restaurant, @reservation]) do |f| %>
+
+	<div class="date">
+		<%= f.label :dinner_time %>
+		<%= f.datetime_select :dinner_time, {discard_year: true, min_hour: Time.now + 1.hour, minute_step: 30, max_hour: @restaurant.closing_time - 1.hour} %>
+	</div>
+
+	<div class="field">
+		<%= f.label :partysize, "Party Size" %>
+		<%= f.select :partysize, (1..6).to_a %>
+	</div>
+
+	<div class="submit">
+		<%= f.submit %>
+	</div>
+
+<% end %>
