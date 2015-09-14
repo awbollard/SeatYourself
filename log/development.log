@@ -1875,3 +1875,552 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-09-14 16:41:31 -0400
+
+
+Started GET "/users/11" for ::1 at 2015-09-14 17:30:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mRestaurant Load (1.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?[0m  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (345.2ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 1931ms (Views: 1760.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/restaurant.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/restaurant.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-09-14 17:30:40 -0400
+
+
+Started GET "/restaurants/new" for ::1 at 2015-09-14 17:30:57 -0400
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/_form.html.erb (141.1ms)
+  Rendered restaurants/new.html.erb within layouts/application (171.1ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 598ms (Views: 559.4ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/restaurants" for ::1 at 2015-09-14 17:32:26 -0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DRuRZOGEH7zZhOkm7a9MezEToFGPFc2rDYySLucaGFw9wkANutIoiHT+5DUIk9eWj+jzRfZoDvjngHM9Fz5Buw==", "restaurant"=>{"name"=>"Bofa", "capacity"=>"21", "address"=>"78 Tecumseth Street", "opening_time"=>"10", "closing_time"=>"20", "city"=>"Toronto", "price"=>"$$$", "description"=>";)"}, "commit"=>"Create Restaurant"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (12.0ms)[0m  [1mINSERT INTO "restaurants" ("name", "capacity", "address", "opening_time", "closing_time", "city", "price", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Bofa"], ["capacity", 21], ["address", "78 Tecumseth Street"], ["opening_time", 10], ["closing_time", 20], ["city", "Toronto"], ["price", "$$$"], ["description", ";)"], ["created_at", "2015-09-14 21:32:27.006947"], ["updated_at", "2015-09-14 21:32:27.006947"]]
+  [1m[35m (13.0ms)[0m  commit transaction
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/restaurants/2
+Completed 302 Found in 55ms (ActiveRecord: 27.0ms)
+
+
+Started GET "/restaurants/2" for ::1 at 2015-09-14 17:32:27 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRestaurant Load (1.0ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered restaurants/show.html.erb within layouts/application (184.1ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 691ms (Views: 649.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/11" for ::1 at 2015-09-14 17:32:35 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mRestaurant Load (1.0ms)[0m  SELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (12.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 512ms (Views: 443.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/restaurants/2" for ::1 at 2015-09-14 17:32:48 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mRestaurant Load (1.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered restaurants/show.html.erb within layouts/application (11.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 430ms (Views: 423.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/restaurants/2/reservations" for ::1 at 2015-09-14 17:33:32 -0400
+Processing by ReservationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"19FHVzQxcPO7N/Z7z9LHjDGT1TriTugbcAOLA8n7ITLnCJY+b2dHxxZN+2gq7lxhj2iGLpszK0iaD2oQOd941Q==", "reservation"=>{"dinner_time(1i)"=>"2015", "dinner_time(2i)"=>"9", "dinner_time(3i)"=>"14", "dinner_time(4i)"=>"21", "dinner_time(5i)"=>"00", "partysize"=>"2"}, "commit"=>"Create Reservation", "restaurant_id"=>"2"}
+  [1m[35mRestaurant Load (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered reservations/_reservation_form.html.erb (57.0ms)
+  Rendered reservations/new.html.erb within layouts/application (96.1ms)
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 2.0ms)
+
+ActionView::Template::Error (undefined method `reservations_path' for #<#<Class:0x0000000c0857f8>:0x0000000c084cb8>):
+    1: <%= form_for @reservation do |f| %>
+    2: 
+    3: <div class="date">
+    4: 	<%= f.label :dinner_time %>
+  app/views/reservations/_reservation_form.html.erb:1:in `_app_views_reservations__reservation_form_html_erb__1720206889_100970120'
+  app/views/reservations/new.html.erb:4:in `_app_views_reservations_new_html_erb__619722354_100957260'
+  app/controllers/reservations_controller.rb:19:in `create'
+
+
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (115.1ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (101.1ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (234.2ms)
+
+
+Started GET "/users/11" for ::1 at 2015-09-14 17:34:16 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mRestaurant Load (0.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?[0m  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (14.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 419ms (Views: 413.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/1" for ::1 at 2015-09-14 17:34:22 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mRestaurant Load (1.0ms)[0m  SELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?  [["owner_id", 1]]
+  Rendered users/show.html.erb within layouts/application (11.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 484ms (Views: 476.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/2" for ::1 at 2015-09-14 17:34:25 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mRestaurant Load (1.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?[0m  [["owner_id", 2]]
+  Rendered users/show.html.erb within layouts/application (19.0ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 2.0ms)
+
+ActionView::Template::Error (undefined method `path' for #<Restaurant:0x0000000b6f9b30>):
+    22: <h3>My restaurants:</h3>
+    23: <% @user.owned_restaurants.each do |f| %>
+    24: 	<p> 
+    25: 		<%= link_to f.name, f.path %>
+    26: <% end %>
+    27: <p> 
+    28: 		<%= link_to 'Edit restaurant' %> | <%= link_to 'Delete restaurant', method: :delete, data: {confirm: "Are you sure you want to delete your reservation? Think about all that delicious food you'll be missing out on!!"} %>
+  app/views/users/show.html.erb:25:in `block in _app_views_users_show_html_erb___143793832_39515820'
+  app/views/users/show.html.erb:23:in `_app_views_users_show_html_erb___143793832_39515820'
+
+
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (17.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (113.1ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (114.1ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (246.2ms)
+
+
+Started GET "/users/3" for ::1 at 2015-09-14 17:34:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRestaurant Load (0.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?[0m  [["owner_id", 3]]
+  Rendered users/show.html.erb within layouts/application (13.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 495ms (Views: 489.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/4" for ::1 at 2015-09-14 17:34:35 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.0ms)
+
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <h1>Hello <%= @user.first_name%></h1>
+    2: 
+    3: <h3>My account info:</h3>
+    4: 	<p>
+  app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb___143793832_39515820'
+
+
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (16.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (116.1ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (2.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (109.1ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (2.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (234.2ms)
+
+
+Started GET "/users/5" for ::1 at 2015-09-14 17:34:40 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered users/show.html.erb within layouts/application (10.0ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <h1>Hello <%= @user.first_name%></h1>
+    2: 
+    3: <h3>My account info:</h3>
+    4: 	<p>
+  app/views/users/show.html.erb:1:in `_app_views_users_show_html_erb___143793832_39515820'
+
+
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (108.1ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (2.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (112.1ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.0ms)
+  Rendered C:/Ruby21-x64/lib/ruby/gems/2.1.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (264.2ms)
+
+
+Started GET "/users/6" for ::1 at 2015-09-14 17:34:46 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mRestaurant Load (0.0ms)[0m  SELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?  [["owner_id", 6]]
+  Rendered users/show.html.erb within layouts/application (13.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 389ms (Views: 385.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/7" for ::1 at 2015-09-14 17:34:51 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mRestaurant Load (0.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?[0m  [["owner_id", 7]]
+  Rendered users/show.html.erb within layouts/application (11.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 390ms (Views: 382.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/8" for ::1 at 2015-09-14 17:34:57 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mRestaurant Load (1.0ms)[0m  SELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?  [["owner_id", 8]]
+  Rendered users/show.html.erb within layouts/application (8.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 438ms (Views: 429.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/9" for ::1 at 2015-09-14 17:35:01 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mRestaurant Load (1.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?[0m  [["owner_id", 9]]
+  Rendered users/show.html.erb within layouts/application (12.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 478ms (Views: 470.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/10" for ::1 at 2015-09-14 17:35:07 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mRestaurant Load (1.0ms)[0m  SELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?  [["owner_id", 10]]
+  Rendered users/show.html.erb within layouts/application (10.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 399ms (Views: 389.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/11" for ::1 at 2015-09-14 17:35:12 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mRestaurant Load (0.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?[0m  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (12.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 383ms (Views: 373.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/11" for ::1 at 2015-09-14 17:37:03 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mRestaurant Load (0.0ms)[0m  SELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 458ms (Views: 451.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/restaurant.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:37:04 -0400
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:37:04 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:37:04 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:37:04 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-14 17:37:05 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-14 17:37:05 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-14 17:37:05 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-14 17:37:05 -0400
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-14 17:37:05 -0400
+
+
+Started GET "/assets/restaurant.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-09-14 17:37:05 -0400
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-09-14 17:37:05 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-14 17:37:05 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-09-14 17:37:05 -0400
+
+
+Started GET "/users/11" for ::1 at 2015-09-14 17:41:46 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mRestaurant Load (1.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?[0m  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (19.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 509ms (Views: 501.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/restaurant.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/restaurant.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-09-14 17:41:48 -0400
+
+
+Started GET "/users/11" for ::1 at 2015-09-14 17:43:06 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mRestaurant Load (0.0ms)[0m  SELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (15.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 476ms (Views: 470.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/restaurant.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/reservations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/reservations.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/restaurant.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/sessions.self-19a187bec6cdb96d6de80a61c16c857c613536adf9138476bd367db38d282635.js?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-09-14 17:43:07 -0400
+
+
+Started GET "/restaurants/2" for ::1 at 2015-09-14 17:43:15 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mRestaurant Load (0.0ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered restaurants/show.html.erb within layouts/application (20.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 518ms (Views: 510.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/11" for ::1 at 2015-09-14 17:43:26 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mRestaurant Load (1.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?[0m  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (13.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 431ms (Views: 423.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/11" for ::1 at 2015-09-14 17:43:31 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mRestaurant Load (0.0ms)[0m  SELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (11.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 401ms (Views: 396.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/11?data%5Bconfirm%5D=Are+you+sure+you+want+to+delete+your+reservation%3F+Think+about+all+that+delicious+food+you%27ll+be+missing+out+on%21%21&method=delete" for ::1 at 2015-09-14 17:43:33 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"data"=>{"confirm"=>"Are you sure you want to delete your reservation? Think about all that delicious food you'll be missing out on!!"}, "method"=>"delete", "id"=>"11"}
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mRestaurant Load (0.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?[0m  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (9.0ms)
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 384ms (Views: 379.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/11?data%5Bconfirm%5D=Are+you+sure+you+want+to+delete+your+reservation%3F+Think+about+all+that+delicious+food+you%27ll+be+missing+out+on%21%21&method=delete" for ::1 at 2015-09-14 17:43:50 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"data"=>{"confirm"=>"Are you sure you want to delete your reservation? Think about all that delicious food you'll be missing out on!!"}, "method"=>"delete", "id"=>"11"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mRestaurant Load (1.0ms)[0m  SELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (7.0ms)
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 396ms (Views: 389.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/11" for ::1 at 2015-09-14 17:43:52 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mRestaurant Load (1.0ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?[0m  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (10.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 344ms (Views: 338.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/11/edit" for ::1 at 2015-09-14 17:43:57 -0400
+Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  Rendered users/_form.html.erb (25.0ms)
+  Rendered users/edit.html.erb within layouts/application (36.0ms)
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 11]]
+Completed 200 OK in 513ms (Views: 507.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/11" for ::1 at 2015-09-14 17:44:03 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35mRestaurant Load (0.0ms)[0m  SELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."owner_id" = ?  [["owner_id", 11]]
+  Rendered users/show.html.erb within layouts/application (8.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 408ms (Views: 404.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/restaurants" for ::1 at 2015-09-14 17:44:10 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[35mRestaurant Load (0.0ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 355ms (Views: 354.2ms | ActiveRecord: 0.0ms)
