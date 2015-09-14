@@ -6,6 +6,7 @@
 	City: <%= @restaurant.city %><br />
 	Price: <%= @restaurant.price %><br />
 	Description: <%= @restaurant.description %><br />
+	Capacity: <%= @restaurant.capacity %><br />
 </p>
 
 <h2>Make a reservation:</h2>
@@ -14,7 +15,7 @@
 
 	<div class="date">
 		<%= f.label :dinner_time %>
-		<%= f.datetime_select :dinner_time, {discard_year: true, min_hour: Time.now + 1.hour, minute_step: 30, max_hour: @restaurant.closing_time - 1.hour} %>
+		<%= f.datetime_select :dinner_time, {discard_year: true, min_hour: Time.now + 1.hour, minute_step: 60, max_hour: @restaurant.closing_time - 1.hour} %>
 	</div>
 
 	<div class="field">
