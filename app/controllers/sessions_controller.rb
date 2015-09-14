@@ -6,10 +6,10 @@ class SessionsController < ApplicationController
   	user = User.find_by(email: params[:email])
   	if user && user.authenticate(params[:password])
   		session[:user_id] = user.id
-  		redirect_to '/users/:id'
+  		redirect_to show_user_path
   	else 
   		flash.now[:alert] = "You can do better than that. Incorrect UN/Pass. "
-  		render :new
+  		render "new"
   	end
   end
 
