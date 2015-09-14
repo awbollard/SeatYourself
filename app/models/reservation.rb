@@ -1,13 +1,13 @@
 class Reservation < ActiveRecord::Base
 
-	validate :open_hours, on: :dinner_time
+	validate :open_hours
 	validate :max_party_size, on: :partysize
 
 	belongs_to :user
 	belongs_to :restaurant
 
 	def open_hours
-		unless dinner_time <= restaurant.closing_time && dinner_time >= restaurant.opening_time
+		unless dinner_time.hour <= restaurant.closing_time && dinner_time.hour >= restaurant.opening_time
 			errors.add(:dinner_time, "This restaurant is not open during that time. Sorry :(")
 		end
 	end
