@@ -15,6 +15,7 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find_by(id: params[:id])
+    @reservation = Reservation.new
   end
 
   def edit
