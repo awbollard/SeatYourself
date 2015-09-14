@@ -14,11 +14,8 @@
       <% if current_user %>
         Signed in as <%= current_user.email %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
       <% else %>
-<<<<<<< HEAD
         <%= link_to "Log in", session_path %> or <%= link_to "Sign up", new_user_path %>
-=======
         <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
->>>>>>> 515b9114d4bd0d5a5760b308c7c98cf7350f31e8
       <% end %>
     </p>
 
