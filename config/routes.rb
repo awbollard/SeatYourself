@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
- # resources :reservations
+ resources :sessions
  resources :users
- # resources :restaurants
  resources :restaurants do
   resources :reservations
   end
