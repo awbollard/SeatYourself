@@ -1,10 +1,7 @@
 <h1>Restaurants List</h1>
 
 <% @restaurants.each do |r| %>
-<p><%= r.name %></p>
-<p><%= r.address %></p>
-<p><%= r.opening_time %></p>
-<p><%= r.opening_time %></p>
+<p>Restaurant Name: <%= link_to r.name, new_restaurant_reservation_path(r) %> - Address:<%= r.address %> - Opening Time: <%= r.opening_time %>:00 - Closing Time: <%= r.closing_time %>:00</p>
 
 <%= link_to "New Reservation", new_restaurant_reservation_path(r) %>
 

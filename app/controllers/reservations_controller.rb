@@ -1,6 +1,10 @@
 class ReservationsController < ApplicationController
   before_filter :load_restaurant
 
+  def index
+    @reservations = Reservation.all
+  end
+
   def new
   	@reservation = Reservation.new
   end
@@ -14,8 +18,8 @@ class ReservationsController < ApplicationController
     @reservation.user = current_user
 
   	if @reservation.save
-  		redirect_to reservations_path
-  	else 
+  		redirect_to restaurant_reservations_path
+  	else
   		render :new
   	end
   end
