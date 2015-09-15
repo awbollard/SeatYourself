@@ -15,7 +15,7 @@
 <% @user.reservations.each do |f| %>
 	<p> 
 		<%= link_to f %>
-		<%= f.dinner_time.strftime("%A, %b %d") %> <%= f.partysize %> <%= f.restaurant_id %> <br />
+		<%= f.dinner_time.strftime("%A, %b %d") %> <%= "Party Size: "f.partysize %> <%= f.restaurant_id %> <br />
 		<%= link_to 'Edit Reservation', edit_restaurant_reservation_path(f.restaurant_id, f.id) %> <br />
 	</p>
 <% end %>
