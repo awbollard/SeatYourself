@@ -6,26 +6,27 @@
 		<%= @user.last_name %>
 		<%= @user.email %>
 	</p>
-	<p> 
+	<p>
 	<%= link_to 'Edit profile', edit_user_path %> | <%= link_to 'Delete my ish', user_path(@user), method: :delete, data: {confirm: "Are you sure you want to delete your account? How will you ever make a reservation again!!?!?!?!"} %>
 	</p>
 
 
 <h3>My reservations:</h3>
-	<p> 
-		<%= link_to 'Make a reservation', restaurants_path %> | <%= link_to 'Edit reservation' %> | <%= link_to 'Delete reservation', method: :delete, data: {confirm: "Are you sure you want to delete your reservation? Think about all that delicious food you'll be missing out on!!"} %>
+<% @user.reservations.each do |f| %>
+	<p>
+		<%= f.dinner_time.strftime("%A, %b %d") %> Party Size: <%= f.partysize %> <%= f.restaurant_id %> <br />
+		<%= link_to 'Edit Reservation', edit_restaurant_reservation_path(f.restaurant_id, f.id) %> <br />
 	</p>
+<% end %>
 
 
 
 
 <h3>My restaurants:</h3>
 <% @user.owned_restaurants.each do |f| %>
-	<p> 
-		Name: <%= f.name %> <br />
-		<%= link_to f.name, restaurants_path(f) %>
+	<p>
+		<%= link_to f.name, restaurant_path(f) %> <br />
+		<%= link_to 'Edit Restaurant', edit_restaurant_path(f) %> <br />
+		<%= link_to 'Delete Restaurant', method: :delete, data: {confirm: "Are you sure you want to delete #{f.name}?"} %> <br />
 	</p>
 <% end %>
-<p> 
-		<%= link_to 'Edit restaurant' %> | <%= link_to 'Delete restaurant', method: :delete, data: {confirm: "Are you sure you want to delete your reservation? Think about all that delicious food you'll be missing out on!!"} %>
-	</p>
