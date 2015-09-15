@@ -1,4 +1,4 @@
-<%= form_for(@restaurant) do |f| %>	
+<%= form_for(@restaurant) do |f| %>
 
 	<div class="field">
 		<%= f.label :name %> <br />
@@ -17,12 +17,12 @@
 
 	<div class="field">
 		<%= f.label :opening_time %> <br />
-		<%= f.number_field :opening_time %>
+		<%= f.time_field :opening_time %>
 	</div>
 
 	<div class="field">
 		<%= f.label :closing_time %> <br />
-		<%= f.number_field :closing_time %>
+		<%= f.time_field :closing_time %>
 	</div>
 
 	<div class="field">

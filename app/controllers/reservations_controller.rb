@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   before_filter :load_restaurant
 
   def index
-    @reservations = Reservation.all
+    @reservations = @restaurant.reservations
   end
 
   def new
@@ -14,15 +14,21 @@ class ReservationsController < ApplicationController
   end
 
   def create
-  	@reservation = @restaurant.reservations.build(reservation_params)
-    @reservation.user_id = current_user.id
+    if current_user
+    	@reservation = @restaurant.reservations.build(reservation_params)
+      @reservation.user_id = current_user.id
 
-  	if @reservation.save
-  		redirect_to restaurant_reservations_path
-  	else
-      flash[:alert] = "This restaurant is at capacity for this time. We suggest trying another time"
-  		render :new
-  	end
+    	if @reservation.save
+    		redirect_to restaurant_reservations_path
+    	else
+        flash[:alert] = "This restaurant is at capacity for this time. We suggest trying another time"
+    		render :new
+    	end
+
+    else
+      flash[:alert] = "You are not logged in."
+      redirect_to new_session_path
+    end
   end
 
   def edit
