@@ -9,7 +9,7 @@ class Reservation < ActiveRecord::Base
 
 	def open_hours
 		unless dinner_time.hour <= restaurant.closing_time && dinner_time.hour >= restaurant.opening_time
-			errors.add(:dinner_time, "This restaurant is not open during that time. Sorry :(")
+			errors.add(:dinner_time, "This restaurant is not open during that time. Sorry: ")
 		end
 	end
 

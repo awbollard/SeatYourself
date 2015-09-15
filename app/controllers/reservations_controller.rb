@@ -20,6 +20,7 @@ class ReservationsController < ApplicationController
   	if @reservation.save
   		redirect_to restaurant_reservations_path
   	else
+      flash[:alert] = "This restaurant is at capacity for this time. We suggest trying another time"
   		render :new
   	end
   end
